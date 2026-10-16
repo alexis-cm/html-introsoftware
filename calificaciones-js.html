@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Calificaciones</title>
+</head>
+<body>
+
+    <h1>Evaluador de calificaciones</h1>
+    
+    <!-- Identificador del resultado -->
+    <p id="resultado" style="font-size: 20px; font-weight: bold;"></p>
+
+    <script>
+        var entrada = prompt("Introduce una calificación (del 0 al 10):");
+
+        // Comprueba que lo introducido es un número
+        if (Number(entrada) == entrada) {
+            var calificacion = Number(entrada);
+            var mensaje = "";
+
+            // Evalua los rangos
+            if (calificacion >= 0 && calificacion <= 3) {
+                mensaje = "Muy deficiente";
+            } else if (calificacion >= 4 && calificacion <= 5) {
+                mensaje = "Insuficiente";
+            } else if (calificacion === 6) {
+                mensaje = "Suficiente";
+            } else if (calificacion === 7) {
+                mensaje = "Bien";
+            } else if (calificacion >= 8 && calificacion <= 9) {
+                mensaje = "Notable";
+            } else if (calificacion === 10) {
+                mensaje = "Sobresaliente";
+            } else {
+                mensaje = "La calificación debe estar entre 0 y 10";
+            }
+
+            // Muestra el mensaje en la página usando el id "resultado"
+            document.getElementById("resultado").innerText = mensaje;
+
+        } else {
+            // Si no es un número válido, lo mostramos también en pantalla o con alerta, como al usar un símbolo
+            document.getElementById("resultado").innerText = "Por favor, introduce un número válido.";
+        }
+    </script>
+
+</body>
+</html>
